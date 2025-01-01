@@ -16,7 +16,9 @@ def convert_to_mp3(directory, delete_original=False, recursive=False):
                     command = f'ffmpeg -i "{input_path}" -acodec libmp3lame -b:a 320k "{output_path}"'
                     print(f"Executing command: {command}")
 
-                    result = subprocess.run(command, shell=True, check=True, stderr=subprocess.PIPE, text=True)
+                    result = subprocess.run(command, shell=True, check=True,
+                                            stderr=subprocess.PIPE, text=True,
+                                            encoding='utf-8')
                     print(f"Converted: {input_path} to {output_path}")
                 except subprocess.CalledProcessError as e:
                     print(f"Error converting {input_path}: {e}")
