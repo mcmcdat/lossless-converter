@@ -3,7 +3,7 @@ import subprocess
 import shlex
 
 def convert_to_mp3(directory, delete_original=False, recursive=False):
-    supported_formats = ('.wav', '.flac', '.m4a')
+    supported_formats = ('.wav', '.flac', '.m4a', '.aif')
 
     for root, dirs, files in os.walk(directory):
         for file in files:
